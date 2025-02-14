@@ -1,6 +1,8 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import GUI from 'lil-gui'
+import testVertexShader from './shaders/test/vertex.glsl'
+import testFragmentShader from './shaders/test/fragment.glsl'
 
 /**
  * Base
@@ -15,18 +17,17 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 /**
- * Textures
- */
-const textureLoader = new THREE.TextureLoader()
-
-/**
  * Test mesh
  */
 // Geometry
 const geometry = new THREE.PlaneGeometry(1, 1, 32, 32)
 
 // Material
-const material = new THREE.MeshBasicMaterial()
+const material = new THREE.ShaderMaterial({
+    vertexShader: testVertexShader,
+    fragmentShader: testFragmentShader,
+    side: THREE.DoubleSide
+})
 
 // Mesh
 const mesh = new THREE.Mesh(geometry, material)
@@ -79,12 +80,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
-const clock = new THREE.Clock()
-
 const tick = () =>
 {
-    const elapsedTime = clock.getElapsedTime()
-
     // Update controls
     controls.update()
 
