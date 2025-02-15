@@ -20,8 +20,8 @@ const scene = new THREE.Scene();
  * Test mesh
  */
 // Geometry
-//const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
-const geometry = new THREE.SphereGeometry(0.4, 300, 300);
+const geometry = new THREE.PlaneGeometry(1, 1, 32, 32);
+//const geometry = new THREE.SphereGeometry(0.4, 300, 300);
 // Material
 const material = new THREE.ShaderMaterial({
     vertexShader: testVertexShader,
