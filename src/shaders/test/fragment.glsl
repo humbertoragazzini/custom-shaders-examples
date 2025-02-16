@@ -46,10 +46,16 @@ void main()
     //Pattern 13
     //float strength = step(0.4,mod(vUv.x * 10.0, 1.0 )) * step(0.8,mod(vUv.y * 10.0, 1.0 ));
 
-    //Pattern 14
-    float vertical  = step(0.4,mod(vUv.x * 10.0, 1.0 )) * step(0.8,mod(vUv.y * 10.0, 1.0 ));
-    float horizontal  = step(0.8,mod(vUv.x * 10.0, 1.0 )) * step(0.4,mod(vUv.y * 10.0, 1.0 ));
-    float strength = vertical + horizontal;
+     //Pattern 14
+    //float vertical  = step(0.4,mod(vUv.x * 10.0, 1.0 )) * step(0.8,mod(vUv.y * 10.0, 1.0 ));
+    //float horizontal  = step(0.8,mod(vUv.x * 10.0, 1.0 )) * step(0.4,mod(vUv.y * 10.0, 1.0 ));
+    //float strength = vertical + horizontal;
+
+    //Pattern 15
+    float vertical  = step(0.4,mod(( - vUv.x) * 10.0, 1.0)) * step(0.8,mod((0.025 - vUv.y) * 10.0, 1.0));
+    float horizontal  = step(0.8,mod((0.22 - vUv.x) * 10.0, 1.0 )) * step(0.4,mod((0.005- vUv.y) * 10.0, 1.0 ));
+    float strength = (vertical + horizontal);
+
 
     gl_FragColor = vec4(strength,strength,strength, 1.0);
 }
