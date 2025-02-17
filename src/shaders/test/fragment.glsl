@@ -59,7 +59,10 @@ void main()
     //float strength = abs(vUv.x - 0.5);
 
     //Pattern 17
-    float strength = min(abs(vUv.y - 0.5), abs(vUv.x - 0.5));
+    //float strength = min(abs(vUv.y - 0.5), abs(vUv.x - 0.5));
+
+    // used in my website
+    //float strength = abs(cos(vUv.y*3.14)) + abs(cos(vUv.x*3.14))-0.1;
 
 
     gl_FragColor = vec4(strength,strength,strength, 1.0);
