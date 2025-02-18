@@ -86,11 +86,17 @@ void main()
 
     //pattern 22
     //float valueX = floor(vUv.x * 10.0)/10.0;
-    //float valueY = floor(vUv.y * 10.0)/10.0;
+    ////float valueY = floor(vUv.y * 10.0)/10.0;
 
     //float strength = valueX*valueY;
+    
+    //pattern 23
+    //float strength = random(vUv);
 
-    float strength = random(vUv);
+    //pattern 24
+    float randomX = floor(vUv.x * 10.0)/10.0;
+    float randomY = floor(vUv.y * 10.0)/10.0;
+    float strength = random(vec2(randomX,randomY)) * random(vec2(randomY,randomX));
 
     gl_FragColor = vec4(strength,strength,strength, 1.0);
 }
