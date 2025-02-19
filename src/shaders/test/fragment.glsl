@@ -113,8 +113,13 @@ void main()
     //pattern 28
     //float strength = 1.0 - length(vUv - 0.5);
 
-    //pattern 29
-    float strength = 0.01/ distance(vUv,vec2(0.5));
+    //pattern 29 check this for the primalport project
+    //float strength = 0.02/ distance(vUv,vec2(0.5)) - 0.2;
+
+    //pattern 30
+    float strength = 0.02/ distance(vUv,vec2(0.5));
+
+
 
     gl_FragColor = vec4(strength,strength,strength, 1.0);
 }
