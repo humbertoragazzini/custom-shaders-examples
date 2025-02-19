@@ -1,3 +1,5 @@
+
+#define PI 3.14159
 varying vec2 vUv;
 
 float random(vec2 st)
@@ -143,16 +145,16 @@ void main()
 
 
     //pattern 32
-    vec2 lightUvX = vec2(
-        rotate(vUv, 1.0,vec2(0.5)).x * 0.2 + 0.4,
-        rotate(vUv, 1.0,vec2(0.5)).y
-    );
+    //vec2 lightUvX = vec2(
+    //    rotate(vUv, PI /4.0,vec2(0.5)).x * 0.2 + 0.4,
+    //    rotate(vUv, PI /4.0,vec2(0.5)).y
+    //);
 
-    vec2 lightUvY = vec2(
-        rotate(vUv, 1.0,vec2(0.5)).x,
-        rotate(vUv, 1.0,vec2(0.5)).y * 0.2 + 0.4
-    );
-    float strength = (0.015 / distance(lightUvX,vec2(0.5))) * (0.015 / distance(lightUvY,vec2(0.5)));
+    //vec2 lightUvY = vec2(
+    //    rotate(vUv, PI /4.0,vec2(0.5)).x,
+    //    rotate(vUv, PI /4.0,vec2(0.5)).y * 0.2 + 0.4
+    //);
+    //float strength = (0.015 / distance(lightUvX,vec2(0.5))) * (0.015 / distance(lightUvY,vec2(0.5)));
 
     gl_FragColor = vec4(strength,strength,strength, 1.0);
 }
