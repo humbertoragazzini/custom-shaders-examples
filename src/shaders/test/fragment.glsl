@@ -4,7 +4,13 @@ float random(vec2 st)
 {
     return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
 }
-
+vec2 rotate(vec2 uv, float rotation, vec2 mid)
+{
+    return vec2(
+      cos(rotation) * (uv.x - mid.x) + sin(rotation) * (uv.y - mid.y) + mid.x,
+      cos(rotation) * (uv.y - mid.y) - sin(rotation) * (uv.x - mid.x) + mid.y
+    );
+}
 void main()
 {
     //pattern custom beto
@@ -124,14 +130,27 @@ void main()
     //float strength = 0.015 / distance(lightUv,vec2(0.5));
 
     //pattern 31
+    //vec2 lightUvX = vec2(
+    //    vUv.x * 0.2 + 0.4,
+    //    vUv.y
+    //);
+
+    //vec2 lightUvY = vec2(
+    //    vUv.x,
+    //    vUv.y * 0.2 + 0.4
+    //);
+    //float strength = (0.015 / distance(lightUvX,vec2(0.5))) * (0.015 / distance(lightUvY,vec2(0.5)));
+
+
+    //pattern 32
     vec2 lightUvX = vec2(
-        vUv.x * 0.2 + 0.4,
-        vUv.y
+        rotate(vUv, 1.0,vec2(0.5)).x * 0.2 + 0.4,
+        rotate(vUv, 1.0,vec2(0.5)).y
     );
 
     vec2 lightUvY = vec2(
-        vUv.x,
-        vUv.y * 0.2 + 0.4
+        rotate(vUv, 1.0,vec2(0.5)).x,
+        rotate(vUv, 1.0,vec2(0.5)).y * 0.2 + 0.4
     );
     float strength = (0.015 / distance(lightUvX,vec2(0.5))) * (0.015 / distance(lightUvY,vec2(0.5)));
 
