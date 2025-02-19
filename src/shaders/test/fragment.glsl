@@ -116,10 +116,24 @@ void main()
     //pattern 29 check this for the primalport project
     //float strength = 0.02/ distance(vUv,vec2(0.5)) - 0.2;
 
-    //pattern 30
-    float strength = 0.02/ distance(vUv,vec2(0.5));
+     //pattern 30
+    //vec2 lightUv = vec2(
+    //    vUv.x * 0.2 + 0.4,
+    //    vUv.y
+    //);
+    //float strength = 0.015 / distance(lightUv,vec2(0.5));
 
+    //pattern 31
+    vec2 lightUvX = vec2(
+        vUv.x * 0.2 + 0.4,
+        vUv.y
+    );
 
+    vec2 lightUvY = vec2(
+        vUv.x,
+        vUv.y * 0.2 + 0.4
+    );
+    float strength = (0.015 / distance(lightUvX,vec2(0.5))) * (0.015 / distance(lightUvY,vec2(0.5)));
 
     gl_FragColor = vec4(strength,strength,strength, 1.0);
 }
