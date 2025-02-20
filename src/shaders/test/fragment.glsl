@@ -170,11 +170,18 @@ void main()
         
     //pattern 37 this is my shader
     //float strength = 1.0 - (1.0 - step(abs(distance(vUv,vec2(0.5,0.1*sin(vUv.x*20.0)+0.5))-0.30),0.015));
-      
-    //pattern 37 bruno shader
+       
+    //pattern 38
+    //vec2 waveUv = vec2(
+    //            vUv.x + sin(vUv.y*20.0) * 0.15,
+    //            vUv.y + sin(vUv.x*20.0) * 0.15
+    //        );
+    //float strength = 1.0 - step(0.01, abs(distance(waveUv, vec2(0.5))-0.25));    
+     
+    //pattern 39
     vec2 waveUv = vec2(
-                vUv.x + sin(vUv.y*20.0) * 0.15,
-                vUv.y + sin(vUv.x*20.0) * 0.15
+                vUv.x + sin(vUv.y*120.0) * 0.05,
+                vUv.y + sin(vUv.x*120.0) * 0.05
             );
     float strength = 1.0 - step(0.01, abs(distance(waveUv, vec2(0.5))-0.25));    
 
