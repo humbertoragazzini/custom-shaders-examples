@@ -212,7 +212,7 @@ void main()
     //float strength = sin(angle*50.0);
 
 
-    // pattern 44
+    // pattern 45 this is from bruno
     float angle = atan(vUv.x - 0.5, vUv.y - 0.5 );
     angle /= PI * 2.0;
     angle += 0.5;
