@@ -277,6 +277,8 @@ void main()
 
     // pattern 50
     float strength = step(0.5,sin(cnoise(vUv * 20.0)*20.0));
+    // claping
+    strength = clamp(strength, 0.0, 1.0);
 
     // pattern colorizing
     vec3 blackColor = vec3(0.0);
