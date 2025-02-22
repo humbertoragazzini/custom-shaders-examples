@@ -276,7 +276,10 @@ void main()
     //float strength = sin(cnoise(vUv * 20.0)*20.0);
 
     // pattern 50
-    float strength = sin(cnoise(vUv * 20.0)*20.0);
+    //float strength = step(0.5,sin(cnoise(vUv * 20.0)*20.0));
 
-    gl_FragColor = vec4(strength,strength,strength, 1.0);
+    // pattern colorizing
+
+    //black and white version
+    //gl_FragColor = vec4(strength,strength,strength, 1.0);
 }
