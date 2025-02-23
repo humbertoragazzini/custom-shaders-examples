@@ -1,0 +1,20 @@
+jobs:
+    run-deploy-app:
+      runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Setup nodejs
+      - name: Setup Node.js 18v
+        uses: actions/setup-node@v1
+        width:
+          node-version: "18.x"
+      
+      # Install all packages
+      - name: Setup dependencies
+        run: npm install --frozen-lockfile
+
+      # Testing
+      - name: Check files
+        run: ls
