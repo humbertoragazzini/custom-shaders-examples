@@ -12,7 +12,7 @@ jobs:
       # Setup nodejs
       - name: Setup Node.js 18v
         uses: actions/setup-node@v1
-        width:
+        with:
           node-version: "18.x"
       
       # Install all packages
