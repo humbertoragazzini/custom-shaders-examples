@@ -18,6 +18,10 @@ jobs:
         # Install all packages
         - name: Setup dependencies
           run: npm install --frozen-lockfile
+        
+        # Building the project
+        - name: Building the project
+          run: npm build
 
         # Testing
         - name: Check files
